@@ -8,7 +8,12 @@
     "test": "react-scripts test",
     "lint:eslint": "eslint --ext .js,.ts,.jsx,.tsx --ignore-path .gitignore --cache .",
     "lint:prettier": "prettier --ignore-path .gitignore --write .",
-    "lint": "npm run lint:eslint && npm run lint:prettier"
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --ignore-path .gitignore --cache --fix",
+    "*.{js,ts,jsx,tsx,css,md,json,yml}": "prettier --ignore-path .gitignore --write"
   },
   "browserslist": {
     "production": [
@@ -44,6 +49,8 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "5.1.0",
     "eslint-plugin-testing-library": "4.10.1",
+    "husky": "7.0.1",
+    "lint-staged": "11.1.2",
     "prettier": "2.3.2"
   }
 }
