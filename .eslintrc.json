@@ -1,3 +1,14 @@
 {
-  "extends": ["react-app", "react-app/jest", "standard", "prettier"]
+  "extends": ["standard", "react-app", "react-app/jest", "prettier"],
+  "rules": {
+    "react/prop-types": "off",
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ]
+  }
 }
