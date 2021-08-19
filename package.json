@@ -6,7 +6,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "lint:eslint": "eslint --ext .js,.ts,.jsx,.tsx --ignore-path .gitignore --cache .",
+    "lint:eslint": "eslint --ext .js,.ts,.jsx,.tsx --ignore-path .gitignore --cache --fix .",
     "lint:prettier": "prettier --ignore-path .gitignore --write .",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "prepare": "husky install"
