@@ -12,5 +12,6 @@ const ENDPOINT_URL =
 
 export const server = axios.create({
   baseURL: ENDPOINT_URL,
-  timeout: 5000
+  timeout: 5000,
+  withCredentials: true
 })
