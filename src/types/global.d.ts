@@ -1,10 +1,10 @@
-export type RegisterQuery = {
+export type RegisterRequest = {
   name: string
   email: string
   password: string
 }
 
-export type LoginQuery = {
+export type LoginRequest = {
   email: string
   password: string
 }

@@ -1,11 +1,11 @@
-import { LoginQuery, RegisterQuery } from '../../types/global'
+import { LoginRequest, RegisterRequest } from '../../types/global'
 import { server } from '../server'
 
-export const userRegister = async (body: RegisterQuery) => {
+export const userRegister = async (body: RegisterRequest) => {
   await server.post('/register', body)
 }
 
-export const userLogin = async (body: LoginQuery) => {
+export const userLogin = async (body: LoginRequest) => {
   await server.post('/login', body)
 }
 
