@@ -8,3 +8,8 @@ export type LoginRequest = {
   email: string
   password: string
 }
+
+export type CreatePictureRequest = {
+  filename: string
+  picture: string
+}
