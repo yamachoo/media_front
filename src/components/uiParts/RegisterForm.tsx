@@ -1,11 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { userRegister } from '../../server/api/auth'
-import type { RegisterQuery } from '../../types/global'
+import type { RegisterRequest } from '../../types/global'
 
 export const RegisterForm: React.FC = () => {
-  const { register, handleSubmit } = useForm<RegisterQuery>()
-  const onSubmit = async (data: RegisterQuery) => {
+  const { register, handleSubmit } = useForm<RegisterRequest>()
+  const onSubmit = async (data: RegisterRequest) => {
     try {
       await userRegister(data)
       console.log('success')

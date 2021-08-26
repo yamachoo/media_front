@@ -1,11 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { userLogin } from '../../server/api/auth'
-import type { LoginQuery } from '../../types/global'
+import type { LoginRequest } from '../../types/global'
 
 export const LoginForm: React.FC = () => {
-  const { register, handleSubmit } = useForm<LoginQuery>()
-  const onSubmit = async (data: LoginQuery) => {
+  const { register, handleSubmit } = useForm<LoginRequest>()
+  const onSubmit = async (data: LoginRequest) => {
     try {
       await userLogin(data)
       console.log('success')
