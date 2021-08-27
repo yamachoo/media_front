@@ -1,4 +1,3 @@
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { userLogin } from '../../server/api/auth'
 import type { LoginRequest } from '../../types/global'
@@ -15,8 +14,8 @@ export const LoginForm: React.FC = () => {
   }
 
   return (
-    <div className="card bg-base-200 p-10 max-w-md mx-auto">
-      <form onSubmit={handleSubmit(onSubmit)} className="form-control">
+    <div className="card bg-base-200 p-10 w-96">
+      <form onSubmit={handleSubmit(onSubmit)} className="form-control mb-8">
         <input
           {...register('email', {
             required: true,
