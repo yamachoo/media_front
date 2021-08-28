@@ -13,3 +13,7 @@ export type CreatePictureRequest = {
   filename: string
   picture: string
 }
+
+export type User = {
+  name: string
+}
