@@ -1,13 +1,15 @@
 import { useForm } from 'react-hook-form'
+import { Link, useHistory } from 'react-router-dom'
 import { userRegister } from '../../server/api/auth'
 import type { RegisterRequest } from '../../types/global'
 
 export const RegisterForm: React.FC = () => {
   const { register, handleSubmit } = useForm<RegisterRequest>()
+  const history = useHistory()
   const onSubmit = async (data: RegisterRequest) => {
     try {
       await userRegister(data)
-      console.log('success')
+      history.push('/login')
     } catch (error) {
       console.log(error)
     }
@@ -43,6 +45,9 @@ export const RegisterForm: React.FC = () => {
           新規登録
         </button>
       </form>
+      <Link to="/" className="text-center">
+        既にアカウントをお持ちですか？
+      </Link>
     </div>
   )
 }
