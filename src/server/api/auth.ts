@@ -1,4 +1,4 @@
-import { LoginRequest, RegisterRequest, User } from '../../types/global'
+import type { LoginRequest, RegisterRequest, User } from '../../types/global'
 import { server } from '../server'
 
 export const userRegister = async (body: RegisterRequest) => {
