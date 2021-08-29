@@ -13,7 +13,7 @@ export const LogoutButton: React.FC = () => {
       setUser({} as User)
       history.push('/')
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 

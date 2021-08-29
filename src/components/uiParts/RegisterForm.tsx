@@ -11,7 +11,7 @@ export const RegisterForm: React.FC = () => {
       await userRegister(data)
       history.push('/login')
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 

@@ -15,7 +15,7 @@ export const LoginForm: React.FC = () => {
       setUser(user)
       history.push('/')
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 
