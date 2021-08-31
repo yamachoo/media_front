@@ -20,14 +20,16 @@ export const Home: React.FC = () => {
   return (
     <div className="pt-20">
       <div className="container mx-auto px-4">
-        {pictures.map((picture, i) => (
-          <div key={i} className="mb-4">
-            <PictureCard
-              src={SERVER_URL.concat('/static/', picture.path)}
-              name={picture.filename}
-            />
-          </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {pictures.map((picture, i) => (
+            <div key={i} className="mb-4">
+              <PictureCard
+                src={SERVER_URL.concat('/static/', picture.path)}
+                name={picture.filename}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
