@@ -45,7 +45,7 @@ export const RegisterForm: React.FC = () => {
           新規登録
         </button>
       </form>
-      <Link to="/" className="text-center">
+      <Link to="/" className="link link-hover text-center">
         既にアカウントをお持ちですか？
       </Link>
     </div>

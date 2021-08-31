@@ -43,7 +43,7 @@ export const LoginForm: React.FC = () => {
           ログイン
         </button>
       </form>
-      <Link to="/register" className="text-center">
+      <Link to="/register" className="link link-hover text-center">
         新しいアカウントが必要ですか？
       </Link>
     </div>
