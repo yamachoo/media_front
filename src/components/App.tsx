@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import { errorRoutes, publictRoutes } from '../router'
+import { errorRoutes, publicRoutes } from '../router'
 import type { User } from '../types/global'
 import { Header } from './uiParts/Header'
 
@@ -19,7 +19,7 @@ export const App: React.FC = () => {
       <UserContext.Provider value={{ user, setUser }}>
         <Header />
         <Switch>
-          {publictRoutes.map((config, i) => (
+          {publicRoutes.map((config, i) => (
             <Route key={i} {...config} />
           ))}
           {errorRoutes.map((config, i) => (
