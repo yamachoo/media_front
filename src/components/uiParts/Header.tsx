@@ -4,6 +4,7 @@ import { UserContext } from '../App'
 import { LoginButton } from './LoginButton'
 import { LogoutButton } from './LogoutButton'
 import { RegisterButton } from './RegisterButton'
+import { UserButton } from './UserButton'
 
 export const Header: React.FC = () => {
   const { user } = useContext(UserContext)
@@ -16,6 +17,7 @@ export const Header: React.FC = () => {
         </Link>
       </div>
       <div className="flex-none">
+        {Object.keys(user).length !== 0 && <UserButton />}
         {Object.keys(user).length !== 0 && <LogoutButton />}
         {Object.keys(user).length !== 0 || <LoginButton />}
         {Object.keys(user).length !== 0 || <RegisterButton />}
