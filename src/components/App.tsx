@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import { errorRoutes, publicRoutes } from '../router'
+import { errorRoutes, privateRoutes, publicRoutes } from '../router'
 import type { User } from '../types/global'
+import { PrivateRoute } from './routes/PrivateRoute'
 import { Header } from './uiParts/Header'
 
 type UserContextType = {
@@ -21,6 +22,9 @@ export const App: React.FC = () => {
         <Switch>
           {publicRoutes.map((config, i) => (
             <Route key={i} {...config} />
+          ))}
+          {privateRoutes.map((config, i) => (
+            <PrivateRoute key={i} {...config} />
           ))}
           {errorRoutes.map((config, i) => (
             <Route key={i} {...config} />

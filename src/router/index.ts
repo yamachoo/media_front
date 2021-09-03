@@ -2,6 +2,7 @@ import { Home } from '../components/pages/Home'
 import { Login } from '../components/pages/Login'
 import { NotFound } from '../components/pages/NotFound'
 import { Register } from '../components/pages/Register'
+import { User } from '../components/pages/User'
 
 export const publicRoutes = [
   {
@@ -18,6 +19,14 @@ export const publicRoutes = [
     path: '/register',
     exact: false,
     component: Register
+  }
+]
+
+export const privateRoutes = [
+  {
+    path: '/user',
+    exact: false,
+    component: User
   }
 ]
 
