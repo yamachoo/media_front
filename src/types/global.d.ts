@@ -24,3 +24,7 @@ export type Picture = {
   filename: string
   path: string
 }
+
+export type CustomFile = File & {
+  preview: string
+}
