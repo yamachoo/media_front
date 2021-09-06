@@ -1,4 +1,4 @@
-import React from 'react'
+import { createContext, useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { errorRoutes, privateRoutes, publicRoutes } from '../router'
 import type { User } from '../types/global'
@@ -10,10 +10,10 @@ type UserContextType = {
   setUser: React.Dispatch<React.SetStateAction<User>>
 }
 
-export const UserContext = React.createContext({} as UserContextType)
+export const UserContext = createContext({} as UserContextType)
 
 export const App: React.FC = () => {
-  const [user, setUser] = React.useState({} as User)
+  const [user, setUser] = useState({} as User)
 
   return (
     <Router>
