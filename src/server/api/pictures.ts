@@ -1,7 +1,7 @@
 import type { CreatePictureRequest, Picture } from '../../types/global'
 import { server } from '../server'
 
-export const createPictures = async (body: CreatePictureRequest) => {
+export const createPicture = async (body: CreatePictureRequest) => {
   await server.post('/pictures', body)
 }
 
