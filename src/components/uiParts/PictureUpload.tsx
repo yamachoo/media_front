@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useDropzone } from 'react-dropzone'
+import { createPicture } from '../../server/api/pictures'
 import type { CustomFile } from '../../types/global'
 
 type Props = {
@@ -19,6 +20,26 @@ export const PictureUpload: React.FC<Props> = ({ files, setFiles }) => {
       )
     }
   })
+  const upload = async () => {
+    try {
+      for (const file of files) {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = async () => {
+          const r = reader.result as string
+
+          await createPicture({
+            filename: file.name.replace(/\..+$/, ''),
+            picture: r.slice(r.indexOf(',') + 1)
+          })
+        }
+      }
+
+      setFiles([])
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   useEffect(
     () => () => {
@@ -40,6 +61,16 @@ export const PictureUpload: React.FC<Props> = ({ files, setFiles }) => {
             </p>
           )}
         </div>
+      </div>
+
+      <div className="mt-4 flex justify-center">
+        <button
+          onClick={upload}
+          className="btn btn-primary"
+          disabled={files.length === 0}
+        >
+          アップロード
+        </button>
       </div>
     </div>
   )
