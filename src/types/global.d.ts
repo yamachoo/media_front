@@ -14,6 +14,10 @@ export type CreatePictureRequest = {
   picture: string
 }
 
+export type GetPictureRequest = {
+  id: string
+}
+
 export type User = {
   name: string
 }

@@ -1,4 +1,8 @@
-import type { CreatePictureRequest, Picture } from '../../types/global'
+import type {
+  CreatePictureRequest,
+  GetPictureRequest,
+  Picture
+} from '../../types/global'
 import { server } from '../server'
 
 export const createPicture = async (body: CreatePictureRequest) => {
@@ -7,5 +11,10 @@ export const createPicture = async (body: CreatePictureRequest) => {
 
 export const getPictures = async (): Promise<Picture[]> => {
   const { data } = await server.get('/pictures')
+  return data
+}
+
+export const getPicture = async (body: GetPictureRequest): Promise<Picture> => {
+  const { data } = await server.get(`/pictures/${body.id}`)
   return data
 }
