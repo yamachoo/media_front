@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { SERVER_URL } from '../../constants'
 import { getPictures } from '../../server/api/pictures'
 import type { Picture } from '../../types/global'
@@ -23,10 +24,12 @@ export const Home: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {pictures.map((picture, i) => (
             <div key={i} className="mb-2">
-              <PictureCard
-                src={SERVER_URL.concat(picture.path)}
-                name={picture.filename}
-              />
+              <Link to={`/pictures/${picture.id}`}>
+                <PictureCard
+                  src={SERVER_URL.concat(picture.path)}
+                  name={picture.filename}
+                />
+              </Link>
             </div>
           ))}
         </div>

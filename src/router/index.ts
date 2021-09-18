@@ -1,6 +1,7 @@
 import { Home } from '../components/pages/Home'
 import { Login } from '../components/pages/Login'
 import { NotFound } from '../components/pages/NotFound'
+import { PictureDetail } from '../components/pages/PictureDetail'
 import { Register } from '../components/pages/Register'
 import { User } from '../components/pages/User'
 
@@ -19,6 +20,11 @@ export const publicRoutes = [
     path: '/register',
     exact: false,
     component: Register
+  },
+  {
+    path: '/pictures/:id',
+    exact: false,
+    component: PictureDetail
   }
 ]
 
